@@ -1,0 +1,11 @@
+<%= link_to 'Create New Project', new_project_path %>
+<ul>
+  <% @projects.each do |project| %>
+    <li>
+      <div class="col-md-3">
+        <p><%= link_to project.name, project_path(project) %></p>
+        <p><%= project.description %></p>
+      </div>
+    </li>
+  <% end %>
+</ul>
