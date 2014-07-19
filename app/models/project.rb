@@ -17,4 +17,11 @@
 
 class Project < ActiveRecord::Base
   belongs_to :user
+  before_save :set_date
+
+  private
+  def set_date
+    self.init_day = DateTime.now
+    self.due_day = DateTime.now + 15
+  end
 end
