@@ -16,11 +16,11 @@
 one:
   project_id: 
   user_id: 
-  amount: 1.5
-  reward: MyString
+  amount: 10
+  reward: Standard
 
 two:
   project_id: 
   user_id: 
-  amount: 1.5
-  reward: MyString
+  amount: 15
+  reward: Gift
