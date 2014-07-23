@@ -13,6 +13,25 @@ class BackingsControllerTest < ActionController::TestCase
     assert_not_nil assigns(:project)
   end
 
+  test "should get confirmation page if user is signed in" do
+    user = users(:one)
+    sign_in user
+    get :confirmation, project_id: @project.id, backing: { 
+      amount: 10, 
+      reward: 'Standard'
+    }
+
+    assert_response :success
+  end
+
+  test "should redirect if user is not signed in while getting confirmation" do
+    get :confirmation, project_id: @project.id, backing: { 
+      amount: 10, 
+      reward: 'Standard'
+    }
+    assert_response 302
+  end
+
   test "should create backing" do
     user = users(:one)
     sign_in user
@@ -23,14 +42,15 @@ class BackingsControllerTest < ActionController::TestCase
       }
     end
     assert assigns(:backing).user == user
+    assert_redirected_to project_backing_path(@project, assigns(:backing))
   end
 
-  test "should redirect to user_omniauth_authorize_path if user not signed in while backing" do
+  test "create should fail is user is not signed in" do
     post :create, project_id: @project.id, backing: { 
       amount: 10, 
       reward: 'Standard'
     }
-    assert_redirected_to user_omniauth_authorize_path(:facebook)
+    assert_response 302
   end
 
   test "should get show" do
