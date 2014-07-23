@@ -9,12 +9,33 @@ class ProjectsControllerTest < ActionController::TestCase
     assert 3 >= assigns(:projects).size
   end
 
-  test "should get new" do
+  test "get new when user not signed in" do
     get :new
     assert_response :success
+    assert_not_nil assigns(:project)
   end
 
-  test "should create project" do
+  test "get new with params when user not signed in" do
+    get :new, project: {
+      name: :test,
+      description: :description,
+    }
+    assert_response 302
+  end
+
+  test "get new with params when user signed in" do
+    user = users(:one)
+    sign_in user
+    get :new, project: {
+      name: :test,
+      description: :description,
+    }
+    assert_redirected_to project_path(assigns(:project))
+  end
+
+  test "should create project when user signed in" do
+    user = users(:one)
+    sign_in user
     assert_difference('Project.count') do
       post :create, project: { 
         name: 'test project', 
@@ -25,6 +46,11 @@ class ProjectsControllerTest < ActionController::TestCase
 
     assert (assigns(:project).due_day - assigns(:project).init_day).to_i == 15
     assert_redirected_to project_path(assigns(:project))
+  end
+
+  test "create should fail when user not signed in" do
+    post :create
+    assert_response 302
   end
 
   test "should get show" do
