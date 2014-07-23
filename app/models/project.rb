@@ -16,8 +16,8 @@
 #
 
 class Project < ActiveRecord::Base
-  belongs_to :user
   has_many :backings
+  include BelongsToUser
 
   before_save :set_date
 
