@@ -17,6 +17,8 @@
 
 class Project < ActiveRecord::Base
   belongs_to :user
+  has_many :backings
+
   before_save :set_date
 
   private
