@@ -13,5 +13,5 @@
 
 class Backing < ActiveRecord::Base
   belongs_to :project
-  belongs_to :user
+  include BelongsToUser
 end
