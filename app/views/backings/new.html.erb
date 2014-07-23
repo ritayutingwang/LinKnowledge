@@ -1,0 +1,29 @@
+<h1> Back <%= @project.name %> </h1>
+<%= form_for [@project, @backing], url: :confirmation_project_backings, html: { method: 'GET' } do |f| %>
+  <p>
+    <%= f.label :amount %><br>
+    <%= f.text_field :amount %>
+  </p>
+ 
+  <p>
+    <%= f.label :'No Reward' %><br>
+		<%= f.radio_button(:reward, "No Reward") %>
+  </p>
+ 
+  <p>
+    <%= f.label :'Standard' %><br>
+		<%= f.radio_button(:reward, "Standard") %>
+  </p>
+
+  <p>
+    <%= f.label :'Gift' %><br>
+		<%= f.radio_button(:reward, "Gift") %>
+  </p>
+  <p>
+    <% if user_signed_in? %>
+      <%= f.submit('Continue') %>
+    <% else %>
+      <%= f.submit('Sign in with Facebook and continue backing this project') %>
+    <% end %>
+  </p>
+<% end %>

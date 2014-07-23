@@ -1,0 +1,20 @@
+<h1> Back <%= @project.name %> </h1>
+<%= form_for [@project, @backing] do |f| %>
+  <p>
+    <%= f.label :amount %><br>
+		<%= f.text_field :amount, value: @backing.amount, readonly: true %>
+  </p>
+ 
+  <p>
+    <%= f.label :reward %><br>
+		<%= f.text_field :reward, value: @backing.reward, readonly: true  %>
+  </p>
+	<p>
+		<%= link_to 'Back', new_project_backing_path(@project) %>
+	</p>
+  <p>
+    <% if user_signed_in? %>
+      <%= f.submit('Continue') %>
+    <% end %>
+  </p>
+<% end %>
