@@ -8,12 +8,53 @@
 </head>
 <body>
 
-  <% if user_signed_in? %>
-    <%= link_to "Sign out", destroy_user_session_path %>
-  <% else %>
-    <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
-  <% end %>
-<%= yield %>
-
+  <div class="nav">
+    <div class="container">
+      <ul class="pull-left">
+        <li><img src="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/LinKnowledge_icon_name_no_background.png"></li>
+      </ul>
+      <ul class="pull-right">
+        <% if user_signed_in? %>
+        <li>
+          <a href="#">Rita Wang</a>knows.
+        </li>
+        <li>
+          <%= link_to "Sign out", destroy_user_session_path %>
+        </li>
+        <% else %>
+        <li>
+          <%= link_to "Sign in with Facebook", user_omniauth_authorize_path(:facebook) %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  <%= yield %>
+  <div class="learn-more">
+	   <div class="container">
+    	<div class="row">
+	      <div class="col-md-4">
+			    <h3>About us</h3>
+			    <p>LinKnowledge is passionate about making knowledge sharing easier for everyone in the world.</p>
+			    <p><a href="#">Contact LinKnowledge team</a></p>
+	      </div>
+		    <div class="col-md-4">
+			    <h3>Start a project</h3>
+			    <p>Let people with same curiosity to support what you want to know.</p>
+			    <p><a href="#">Learn more about how a project runs</a></p>
+		    </div>
+		    <div class="col-md-4">
+			    <h3>Back a project</h3>
+			    <p>If you want to know, back the project. LinKnowledge will link you to people who know it.</p>
+			    <p><a href="#">Learn more about what you get</a></p>
+		    </div>
+      </div>
+    </div>
+  </div>
+  <div class="copyright">
+    <div class="copyright-words">
+      <p>copyright @ LinKnowledge 2014
+    </div>
+  </div>
 </body>
 </html>
