@@ -44,7 +44,6 @@ class ProjectsControllerTest < ActionController::TestCase
       }
     end
 
-    assert (assigns(:project).due_day - assigns(:project).init_day).to_i == 15
     assert_redirected_to project_path(assigns(:project))
   end
 

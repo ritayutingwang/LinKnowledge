@@ -18,12 +18,4 @@
 class Project < ActiveRecord::Base
   has_many :backings
   include BelongsToUser
-
-  before_save :set_date
-
-  private
-  def set_date
-    self.init_day = DateTime.now
-    self.due_day = DateTime.now + 15
-  end
 end
