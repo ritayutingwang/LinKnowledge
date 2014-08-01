@@ -32,11 +32,13 @@ ActiveRecord::Schema.define(version: 20140719081432) do
     t.integer  "user_id"
     t.string   "name"
     t.text     "description"
-    t.date     "due_day"
-    t.date     "init_day"
-    t.float    "target_price", default: 10000.0
-    t.string   "status",       default: "open"
-    t.float    "amount"
+    t.string   "city"
+    t.datetime "class_datetime"
+    t.integer  "capacity",              default: 12
+    t.integer  "duration",              default: 12
+    t.string   "status",                default: "open"
+    t.float    "minimum_backing_value", default: 12.0
+    t.float    "total_value"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

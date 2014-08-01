@@ -4,11 +4,13 @@ class CreateProjects < ActiveRecord::Migration
       t.references :user, index: true
       t.string :name
       t.text :description
-      t.date :due_day
-      t.date :init_day
-      t.float :target_price, default: 10000
+      t.string :city
+      t.datetime :class_datetime
+      t.integer :capacity, default: 12
+      t.integer :duration, default: 12
       t.string :status, default: 'open'
-      t.float :amount
+      t.float :minimum_backing_value, default: 12
+      t.float :total_value
 
       t.timestamps
     end
