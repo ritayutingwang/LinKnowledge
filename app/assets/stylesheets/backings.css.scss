@@ -1,3 +1,33 @@
 // Place all the styles related to the backings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.project {
+  border: 1px solid #dbdbdb;
+  font-family: 'Shift', sans-serif;
+  margin: 30px;
+}
+.back-amount {
+  width: 300px;
+}
+.backing {
+  border-bottom: 1px solid #dbdbdb;
+  font-family: 'Shift', sans-serif;
+  height: 300px;
+}
+.back-amount .input-group {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.reward-option {
+  margin-top: 20px;
+  margin-top: 20px;
+}
+.reward-option-name {
+  font-weight: bold;
+  font-size: 16px;
+}
+.result-message {
+  border-bottom: 1px solid #dbdbdb;
+  font-family: 'Shift', sans-serif;
+  height: 300px;
+}
