@@ -1,11 +1,37 @@
-<%= link_to 'Create New Project', new_project_path %>
-<ul>
-  <% @projects.each do |project| %>
-    <li>
-      <div class="col-md-3">
-        <p><%= link_to project.name, project_path(project) %></p>
-        <p><%= project.description %></p>
+<div class="jumbotron">
+  <div class="container">
+    <h1>What do you want to know?</h1>
+    <p>Start a knowledge project and let people back you up!</p>
+  </div>
+</div>
+
+<div class="projects">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <h2>Projects</h2>
+        <p>If you want to know, back the project!</p>
       </div>
-    </li>
-  <% end %>
-</ul>
+        <div class="col-md-4">
+          <div class="pull-right">
+            <div class="start-a-project">
+              <button type="button" class="btn btn-default">
+<span class="glyphicon glyphicon-plus"></span> <%= link_to 'Start a project', new_project_path %>
+</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div class="row">
+      <% @projects.each do |project|%>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <img src="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Yo%20image.png">
+            <p><%= link_to project.name, project_path(project) %></p>
+            <p><%= project.description %></p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>

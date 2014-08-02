@@ -1,29 +1,104 @@
-<h1> Back <%= @project.name %> </h1>
-<%= form_for [@project, @backing], url: :confirmation_project_backings, html: { method: 'GET' } do |f| %>
-  <p>
-    <%= f.label :amount %><br>
-    <%= f.text_field :amount %>
-  </p>
- 
-  <p>
-    <%= f.label :'No Reward' %><br>
-		<%= f.radio_button(:reward, "No Reward") %>
-  </p>
- 
-  <p>
-    <%= f.label :'Standard' %><br>
-		<%= f.radio_button(:reward, "Standard") %>
-  </p>
-
-  <p>
-    <%= f.label :'Gift' %><br>
-		<%= f.radio_button(:reward, "Gift") %>
-  </p>
-  <p>
-    <% if user_signed_in? %>
-      <%= f.submit('Continue') %>
-    <% else %>
-      <%= f.submit('Sign in with Facebook and continue backing this project') %>
+<div class="project-view-in-backing">
+  <div class="container">
+    <div class="project-name">
+      <h3><%= @project.name%></h3>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="project-detail">
+          <h4><a href="#"><%= @project.user.full_name %></a> started the project.</h4>
+          <p><%= @project.description %></p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="project-status">
+          <% if @project.backings.count > 0 %>
+            <p><a href="#"><%= @project.backings.count %></a> people back this project</p>
+          <% else %>
+            <p>Be the first to back this project</p>
+          <% end %>
+          <p><%= @project.time_left %> left</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="backing">
+  <div class="container">
+    <h3>Back the project!</h3>
+    <%= form_for [@project, @backing], url: :confirmation_project_backings, html: { method: 'GET' } do |f| %>
+      <div class="row">
+        <div class="col-md-8">
+          <div class="back-amount">
+            <div class="input-group">
+              <span class="input-group-addon">$</span>
+                <%= f.text_field :amount, class: "form-control", required: true,
+                                    placeholder: "Enter the amount you would like to contribute" %>
+            </div>
+          </div>
+          <div class="backing-reward">
+            <p>Please select your reward</p>
+            <div class="reward-option">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="reward-option-name">
+                    <%= f.radio_button(:reward, "No Reward", checked: true) %>
+                    No Reward<br/>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="reward-option-description">
+                    No Thanks. I just want to help the project.<br/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="reward-option">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="reward-option-name">
+                    <%= f.radio_button(:reward, "Standard") %>
+                    Class Participation $12 +<br/>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="reward-option-description">
+                    I love to help and want to join the classroom myself.<br/>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="reward-option">
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="reward-option-name">
+                    <%= f.radio_button(:reward, "Gift") %>
+                    Class Invitation $15 +<br/>
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <div class="reward-option-description">
+                    I know someone will absolutely love to join this class!<br/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="project-action">
+            <% if user_signed_in? %>
+              <%= content_tag :button, type: "submit", class: "btn btn-success" do %>
+                <span class="glyphicon glyphicon-plus"></span> Back this project
+              <% end %>
+            <% else %>
+              <%= content_tag :button, type: "submit", class: "btn btn-info" do %>
+                <span class="glyphicon glyphicon-plus"></span> Sign in with Facebook and continue backing this project
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+      </div>
     <% end %>
-  </p>
-<% end %>
+  </div>
+</div>

@@ -33,7 +33,23 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
       user.first_name = auth.info.first_nmae
       user.last_name = auth.info.last_name
-      user.image = auth.info.image 
+      user.image = auth.info.image
     end
   end
+
+  def full_name
+    if contains_cjk?(self.first_name) || contains_cjk?(self.last_name)
+      [self.last_name, self.first_name].join(' ').titleize
+    else
+      [self.first_name, self.last_name].join(' ').titleize
+    end
+
+  end
+
+  private
+
+  def contains_cjk? string
+    !!(string =~ /\p{Han}|\p{Katakana}|\p{Hiragana}|\p{Hangul}/)
+  end
+
 end

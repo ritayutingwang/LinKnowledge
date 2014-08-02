@@ -1,3 +1,70 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.jumbotron {
+  background-image:url('http://www.undraleu.com/wp-content/uploads/2012/04/connect.jpg');
+  font-family: 'Shift', sans-serif;
+  height: 500px;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: #fff;
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.jumbotron p {
+  font-size: 20px;
+  font-color: white;
+}
+
+
+.projects {
+  background-color: #efefef;
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
+}
+
+.projects h2 {
+  font-family: 'Shift', sans-serif;
+  font-weight: bold;
+  color: #393c3d;
+  font-size: 24px;
+}
+.projects p {
+  font-family: 'Shift', sans-serif;
+  font-size: 15px;
+  margin-bottom: 13px;
+
+}
+
+.start-a-project {
+  margin:10px;
+}
+
+.start-a-project a {
+  font-size: 16px;
+  font-family: 'Shift', sans-serif;
+  color: black;
+
+}
+.project {
+  font-family: 'Shift', sans-serif;
+  height: 300px;
+}
+.project h3 {
+  font-family: 'Shift', sans-serif;
+  margin-bottom: 20px;
+}
+.project .project-name {
+  margin-bottom: 10px;
+}
+
+.project .project-status p {
+  margin-top: 10px;
+}
