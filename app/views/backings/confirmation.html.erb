@@ -1,4 +1,4 @@
-<div class="project">
+<div class="project-view-in-backing">
   <div class="container">
     <div class="project-name">
       <h3><%= @project.name%></h3>
@@ -42,7 +42,9 @@
               <div class="reward-option">
                 <div class="row">
                   <div class="col-md-4">
+                    <div class="reward-option-name">
                       No Reward<br/>
+                    </div>
                   </div>
                   <div class="col-md-8">
                     <div class="reward-option-description">
@@ -85,7 +87,7 @@
           </div>
           <div class="col-md-4">
             <div class="project-action">
-              <%= content_tag :button, :type => :submit, :class => :'btn btn-default' do %>
+              <%= content_tag :button, :type => :submit, :class => :'btn btn-success' do %>
                 <span class="glyphicon glyphicon-plus"></span> Continue
               <% end %>
             </div>

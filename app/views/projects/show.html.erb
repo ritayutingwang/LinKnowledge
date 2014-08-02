@@ -12,9 +12,9 @@
       </div>
       <div class="col-md-4">
         <div class="project-action">
-          <button type="button" class="btn btn-default">
-<span class="glyphicon glyphicon-plus"></span> <%= link_to 'Back it', new_project_backing_path(@project) %>
-</button>
+          <button type="button" class="btn btn-info">
+            <img src="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/glyphicons/glyphicons/png/glyphicons_019_heart_empty.png"> <%= link_to 'Back it', new_project_backing_path(@project) %>
+          </button>
         </div>
         <div class="project-status">
           <% if @project.backings.count > 0 %>

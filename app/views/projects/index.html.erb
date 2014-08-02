@@ -23,33 +23,15 @@
         </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <% if @projects.length > 0 %>
-        <div class="thumbnail">
-          <img src="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Yo%20image.png">
-          <p><%= link_to @projects[0].name, project_path(@projects[0]) %></p>
-          <p><%= @projects[0].description %></p>
+      <% @projects.each do |project|%>
+        <div class="col-md-4">
+          <div class="thumbnail">
+            <img src="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Yo%20image.png">
+            <p><%= link_to project.name, project_path(project) %></p>
+            <p><%= project.description %></p>
+          </div>
         </div>
-        <% end %>
-      </div>
-      <div class="col-md-4">
-        <% if @projects.length > 1 %>
-        <div class="thumbnail">
-          <img src="http://goo.gl/Av1pac">
-          <p><%= link_to @projects[1].name, project_path(@projects[1]) %></p>
-          <p><%= @projects[1].description %></p>
-        </div>
-        <% end %>
-      </div>
-      <div class="col-md-4">
-        <% if @projects.length > 2 %>
-        <div class="thumbnail">
-          <img src="http://goo.gl/0Kd7UO">
-          <p><%= link_to @projects[2].name, project_path(@projects[2]) %></p>
-          <p><%= @projects[2].description %></p>
-        </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
   </div>
 </div>

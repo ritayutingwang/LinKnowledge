@@ -1,11 +1,20 @@
 // Place all the styles related to the backings controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.project {
+.project-view-in-backing {
   border: 1px solid #dbdbdb;
   font-family: 'Shift', sans-serif;
   margin: 30px;
 }
+
+.project-view-in-backing .project-name {
+  margin-bottom: 10px;
+}
+
+.project-view-in-backing .project-status p {
+  margin-top: 10px;
+}
+
 .back-amount {
   width: 300px;
 }
@@ -14,7 +23,7 @@
   font-family: 'Shift', sans-serif;
   height: 300px;
 }
-.back-amount .input-group {
+.backing .back-amount .input-group {
   margin-top: 10px;
   margin-bottom: 10px;
 }

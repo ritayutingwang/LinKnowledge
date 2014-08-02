@@ -5,18 +5,20 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
+  <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
 </head>
 <body>
 
   <div class="nav">
     <div class="container">
       <ul class="pull-left">
-        <li><img src="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/LinKnowledge_icon_name_no_background.png"></li>
+        <li><a href="/"><img src="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/LinKnowledge_icon_name_no_background.png"></a></li>
       </ul>
       <ul class="pull-right">
         <% if user_signed_in? %>
         <li>
-          <a href="#">Rita Wang</a>knows.
+          <a href="#"><%= current_user.last_name %></a>knows.
         </li>
         <li>
           <%= link_to "Sign out", destroy_user_session_path %>
