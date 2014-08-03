@@ -3,58 +3,184 @@
     <div class="row">
       <h3>Propose a new project</h3>
     </div>
+    <% if user_signed_in? %>
+      <%= form_for @project do |f| %>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-name">
+                  <h4>Project name</h4>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-name">
+                  <%= f.text_field :name, required: true, class: "form-control", placeholder: "Type project name" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>City</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <%= f.text_field :city, required: true, class: "form-control", placeholder: "Taipei?"%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>Class time</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <%= f.text_field :class_datetime, required: true, class: "form-control", placeholder: "August 10, 2014 7-10 PM"%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>Class capacity</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <%= f.text_field :capacity, required: true, class: "form-control", value: "12", readonly:true %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>Project detail</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <%= f.text_area :description, required: true, class: "form-control", placeholder: "Tell everyone what and why you want to know."%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>Backing minimum</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                      <%= f.text_field :minimum_backing_value, value: "12.00", readonly: true, class: "form-control", required: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project-action">
+              <%= content_tag :button, :type => :submit, :class => :'btn btn-success' do %>
+                <span class="glyphicon glyphicon-plus"></span> Propose
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <%= form_for @project, url: :new_project, html: { method: 'GET' } do |f| %>
+        <div class="row">
+          <div class="col-md-8">
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-name">
+                  <h4>Project name</h4>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-name">
+                  <%= f.text_field :name, required: true, class: "form-control", placeholder: "Type project name" %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>City</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <%= f.text_field :city, required: true, class: "form-control", placeholder: "Taipei?"%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>Class time</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <%= f.text_field :class_datetime, required: true, class: "form-control", placeholder: "August 10, 2014 7-10 PM"%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>Class capacity</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <%= f.text_field :capacity, required: true, class: "form-control", value: "12", readonly:true %>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>Project detail</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <%= f.text_area :description, required: true, class: "form-control", placeholder: "Tell everyone what and why you want to know."%>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="project-property">
+                  <h5>Backing minimum</h5>
+                </div>
+              </div>
+              <div class="col-md-9">
+                <div class="project-property">
+                  <div class="input-group">
+                    <span class="input-group-addon">$</span>
+                      <%= f.text_field :minimum_backing_value, value: "12.00", readonly: true, class: "form-control", required: true %>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="project-action">
+              <%= content_tag :button, :type => :submit, :class => :'btn btn-success' do %>
+                <span class="glyphicon glyphicon-plus"></span> Propose
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
   </div>
-  <% if user_signed_in? %>
-    <%= form_for @project do |f| %>
-    <div class="project">
-      <div class="container">
-        <div class="project-name">
-          <h4>Project name</h4>
-          <%= f.text_field :name, required: true, class: "form-control", placeholder: "Type project name" %>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="project-detail">
-              <h5>Project detail</h5>
-              <%= f.text_area :description, required: true, class: "form-control", placeholder: "Tell everyone what and why you want to know."%>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="project-action">
-              <%= content_tag :button, :type => :submit, :class => :'btn btn-default' do %>
-                <span class="glyphicon glyphicon-plus"></span> Propose
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  <% else %>
-    <%= form_for @project, url: :new_project, html: { method: 'GET'} do |f| %>
-    <div class="project">
-      <div class="container">
-        <div class="project-name">
-          <h3>Project name</h3>
-          <%= f.text_field :name, class: "form-control", placeholder: "Type project name" %>
-        </div>
-        <div class="row">
-          <div class="col-md-8">
-            <div class="project-detail">
-              <p>Project detail</p>
-              <%= f.text_area :description, class: "form-control", placeholder: "Tell everyone what and why you want to know."%>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="project-action">
-              <%= content_tag :button, :type => :submit, :class => :'btn btn-default' do %>
-                <span class="glyphicon glyphicon-plus"></span> Propose
-              <% end %>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <% end %>
-  <% end %>
 </div>
