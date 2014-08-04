@@ -22,16 +22,45 @@
           </div>
         </div>
     </div>
+    <% @projects.each do |project|%>
+      <div class="each-project">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="project-name">
+                <h3><%= link_to project.name, project_path(project) %></h3>
+                <h4>Started by <a href="#"><%= project.user.full_name %></a></h4>
+              </div>
+              <div class="project-property">
+                <%= project.description %>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="project-property">
+                <%= project.city %>
+              </div>
+              <div class="project-property">
+                <%= project.class_datetime %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    <!--
     <div class="row">
       <% @projects.each do |project|%>
         <div class="col-md-4">
-          <div class="thumbnail">
-            <img src="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Yo%20image.png">
-            <p><%= link_to project.name, project_path(project) %></p>
-            <p><%= project.description %></p>
+          <div class"each-project">
+            <div class="thumbnail">
+              <div class="project-on-image">
+                <p><%= link_to project.name, project_path(project) %></p>
+              </div>
+            </div>
           </div>
         </div>
       <% end %>
     </div>
+    -->
   </div>
 </div>

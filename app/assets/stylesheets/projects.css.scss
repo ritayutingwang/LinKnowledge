@@ -42,6 +42,27 @@
   margin-bottom: 13px;
 
 }
+.projects .each-project {
+  background-color: white;
+  border: 1px solid #dbdbdb;
+  font-family: 'Shift', sans-serif;
+  margin: 10px;
+  padding: 10px;
+}
+
+.projects .project-on-image {
+  background-image: url("https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Library.jpg");
+  width: 350px;
+  height: 165px;
+}
+
+.project-on-image p {
+  font-size: 16px;
+  font-color: white;
+  position: relative;
+  top: 82.5px;
+  text-align: center;
+}
 
 .start-a-project {
   margin:10px;
