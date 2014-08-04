@@ -18,7 +18,7 @@
       <ul class="pull-right">
         <% if user_signed_in? %>
         <li>
-          <a href="#"><%= current_user.last_name %></a>knows.
+          <a href="#"><%= current_user.full_name %></a> knows.
         </li>
         <li>
           <%= link_to "Sign out", destroy_user_session_path %>
