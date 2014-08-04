@@ -55,7 +55,8 @@
 }
 .project {
   font-family: 'Shift', sans-serif;
-  height: 300px;
+  height: auto;
+  margin-bottom: 20px;
 }
 .project h3 {
   font-family: 'Shift', sans-serif;
@@ -65,6 +66,9 @@
   margin-bottom: 10px;
 }
 
+.project .project-property {
+  margin-bottom: 10px;
+}
 .project .project-status p {
   margin-top: 10px;
 }

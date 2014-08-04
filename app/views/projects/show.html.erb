@@ -2,12 +2,69 @@
   <div class="container">
     <div class="project-name">
       <h3><%= @project.name %></h3>
+      <h4>Started by <a href="#"><%= @project.user.full_name %></a></h4>
     </div>
     <div class="row">
       <div class="col-md-8">
-        <div class="project-detail">
-          <h4><a href="#"><%= @project.user.full_name %></a> started the project.</h4>
-          <p><%= @project.description %></p>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="project-property">
+              <h5>City</h5>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="project-property">
+              <%= @project.city %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="project-property">
+              <h5>Class time</h5>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="project-property">
+              <%= @project.class_datetime %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="project-property">
+              <h5>Class capacity</h5>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="project-property">
+              <%= @project.capacity %>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="project-property">
+              <h5>Project detail</h5>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="project-property">
+              <p><%= @project.description %></p>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-3">
+            <div class="project-property">
+              <h5>Backing minimum</h5>
+            </div>
+          </div>
+          <div class="col-md-9">
+            <div class="project-property">
+              <p>$<%= @project.minimum_backing_value %></p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="col-md-4">

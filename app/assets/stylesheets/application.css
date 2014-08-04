@@ -21,7 +21,7 @@
   color: #5a5a5a;
   font-size: 14px;
   font-weight: bold;
-  padding: 14px 10px;
+
 
 }
 
@@ -38,6 +38,8 @@
 }
 
 .learn-more {
+  border-top: 1px solid #dbdbdb;
+  border-bottom: 1px solid #dbdbdb;
   background-color: #f7f7f7;
   font-family: 'Shift', sans-serif;
   height: 200px;
