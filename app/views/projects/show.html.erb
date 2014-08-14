@@ -69,7 +69,9 @@
       </div>
       <div class="col-md-4">
         <div class="project-action">
-          <%= link_to 'Back it', new_project_backing_path(@project), class: "btn btn-success" %>
+          <%= link_to new_project_backing_path(@project), class: "btn btn-success" do %>
+            <span class="glyphicon glyphicon-bullhorn"></span> Back it
+          <% end %>
         </div>
         <div class="project-status">
           <% if @project.backings.count > 0 %>

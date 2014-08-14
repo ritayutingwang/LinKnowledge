@@ -18,7 +18,9 @@
         <div class="col-md-4">
           <div class="pull-right">
             <div class="start-a-project">
-              <%= link_to 'Start a project', new_project_path, class: "btn btn-default" %>
+              <%= link_to new_project_path, class: "btn btn-success" do %>
+                <span class="glyphicon glyphicon-plus"></span> Start a Project
+              <% end %>
             </div>
           </div>
         </div>
