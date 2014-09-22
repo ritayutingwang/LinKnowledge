@@ -2,17 +2,19 @@
 #
 # Table name: projects
 #
-#  id           :integer          not null, primary key
-#  user_id      :integer
-#  name         :string(255)
-#  description  :text
-#  due_day      :date
-#  init_day     :date
-#  target_price :float            default(10000.0)
-#  status       :string(255)      default("open")
-#  amount       :float
-#  created_at   :datetime
-#  updated_at   :datetime
+#  id                    :integer          not null, primary key
+#  user_id               :integer
+#  name                  :string(255)
+#  description           :text
+#  city                  :string(255)
+#  class_datetime        :datetime
+#  capacity              :integer          default(12)
+#  duration              :integer          default(12)
+#  status                :string(255)      default("open")
+#  minimum_backing_value :float            default(12.0)
+#  total_value           :float
+#  created_at            :datetime
+#  updated_at            :datetime
 #
 
 class Project < ActiveRecord::Base
