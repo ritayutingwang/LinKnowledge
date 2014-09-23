@@ -1,0 +1,23 @@
+# == Schema Information
+#
+# Table name: curiosities
+#
+#  id          :integer          not null, primary key
+#  user_id     :integer
+#  title       :string(255)
+#  description :text
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 
+  title: MyString
+  description: MyText
+
+two:
+  user_id: 
+  title: MyString
+  description: MyText

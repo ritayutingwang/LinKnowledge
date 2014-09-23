@@ -1,0 +1,29 @@
+<h1>Listing curiosities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @curiosities.each do |curiosity| %>
+      <tr>
+        <td><%= curiosity.user.full_name %></td>
+        <td><%= curiosity.title %></td>
+        <td><%= curiosity.description %></td>
+        <td><%= link_to 'Show', curiosity %></td>
+        <td><%= link_to 'Edit', edit_curiosity_path(curiosity) %></td>
+        <td><%= link_to 'Destroy', curiosity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Curiosity', new_curiosity_path %>
