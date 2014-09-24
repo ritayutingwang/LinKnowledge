@@ -1,29 +1,55 @@
-<h1>Listing curiosities</h1>
+<div class="jumbotron">
+  <div class="container">
+      <h1>Link people with Knowledge</h1>
+      <h2>Because you want to learn, the knowledge should be there. </h2>
+  </div>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @curiosities.each do |curiosity| %>
-      <tr>
-        <td><%= curiosity.user.full_name %></td>
-        <td><%= curiosity.title %></td>
-        <td><%= curiosity.description %></td>
-        <td><%= link_to 'Show', curiosity %></td>
-        <td><%= link_to 'Edit', edit_curiosity_path(curiosity) %></td>
-        <td><%= link_to 'Destroy', curiosity, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<section class="section2">
+  <div class="container">
+    <div class="message text-center">
+      <h2 class="big-title">Your <span>curiosity</span> is empowered!</h2>
+      <p class="small-title">Give us a good reason and we will bring it to life. For Free! Until Oct 14!</p>
+      <%= link_to 'SHARE YOUR CURIOSITY', new_curiosity_path, class: "button large" %>
+      <a class=" dmbutton large" href="#">CONTACT US TODAY</a>
+    </div><!-- end message -->
+  </div><!-- end container -->
+</section><!-- end section2 -->
 
-<br>
+<section class="section1">
+  <div class="container clearfix">
+    <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
+      <div class="general-title text-center">
+        <h3>What people are curious about</h3>
+        <hr>
+      </div>
+      <% @curiosities.each do |curiosity| %>
 
-<%= link_to 'New Curiosity', new_curiosity_path %>
+        <div class="col-lg-6 col-md-6 col-sm-12">
+          <div class="testimonial">
+            <img data-effect="slide-bottom" class="alignleft img-circle" src="<%= curiosity.user.image %>" alt="">
+            <h3><%= curiosity.title %></h6>
+            <p><%= truncate(curiosity.description, length: 300, separator: ' ') %></p>
+            <div class="testimonial-meta">
+              <h4><%= curiosity.user.full_name %></h4>
+            </div>
+          </div><!-- end dmbox -->
+        </div>
+      <% end %>
+    </div><!-- end content -->
+    <div class="general-title text-center">
+      <a class=" button large" href="#">SEE WHAT AND WHY OTHERS ARE CURIOUS ABOUT</a>
+    </div>
+  </div><!-- end container -->
+</section><!-- end section -->
+
+<section class="section2">
+  <div class="container">
+    <div class="message text-center">
+      <h2 class="big-title">Join our class in <span>San Francisco</span> for free!</h2>
+      <p class="small-title">Audition starts on October 17</p><br>
+      <a class=" dmbutton large" href="#">SUBSCRIBE OUR SF EVENT</a>
+    </div><!-- end message -->
+  </div><!-- end container -->
+</section><!-- end section2 -->
