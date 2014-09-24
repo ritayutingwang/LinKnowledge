@@ -1,5 +1,42 @@
-<h1>New curiosity</h1>
+<section class="section2">
+  <div class="container">
+    <div class="message text-center">
+      <h2 class="big-title">What are you <span>passionate</span> to learn?</h2>
+      <p class="small-title">Share why you want to learn the thing. <br>
+        We will find you who have the same passion for it <br>
+        and a teacher! </p>
+      <a class=" button large" href="#">SEE WHAT AND WHY OTHERS ARE CURIOUS ABOUT</a>
+    </div><!-- end message -->
+  </div><!-- end container -->
+</section><!-- end section2 -->
 
-<%= render 'form' %>
+<section class="section1">
+	<div class="container clearfix">
+	<div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
+		<div class="col-lg-6 col-md-6 col-sm-12">
+      <%= form_for @curiosity do |f| %>
+        <h4 class="title">
+          <span>Share you curiosity</span>
+        </h4>
+        <%= render 'form' %>
+    <% end %>
+   </div><!-- end register -->
+    <div class="col-lg-6 col-md-6 col-sm-12">
+    	<h4 class="title">
+      	<span>Most recent story</span>
+      </h4>
+      <% @curiosities.each do |curiosity| %>
+        <div class="testimonial">
+          <img data-effect="slide-bottom" class="alignleft img-circle" src="<%= curiosity.user.image %>" alt="">
+          <h3><%= curiosity.title %></h6>
+          <p><%= truncate(curiosity.description, length: 300, separator: ' ') %></p>
+          <div class="testimonial-meta">
+            <h4><%= curiosity.user.full_name %> </h4>
+          </div>
+        </div>
+      <% end %>
+    </div>
 
-<%= link_to 'Back', curiosities_path %>
+	 </div><!-- end content -->
+  </div><!-- end container -->
+</section><!-- end section -->
