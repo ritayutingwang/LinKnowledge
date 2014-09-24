@@ -5,7 +5,7 @@ class CuriositiesController < ApplicationController
   # GET /curiosities
   # GET /curiosities.json
   def index
-    @curiosities = Curiosity.all
+    @curiosities = Curiosity.last 6
   end
 
   # GET /curiosities/1
@@ -16,6 +16,7 @@ class CuriositiesController < ApplicationController
   # GET /curiosities/new
   def new
     @curiosity = Curiosity.new
+    @curiosities = Curiosity.last 1
   end
 
   # GET /curiosities/1/edit
