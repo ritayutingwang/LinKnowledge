@@ -5,12 +5,13 @@ class CuriositiesController < ApplicationController
   # GET /curiosities
   # GET /curiosities.json
   def index
-    @curiosities = Curiosity.last 6
+    @curiosities = Curiosity.last 2
   end
 
   # GET /curiosities/1
   # GET /curiosities/1.json
   def show
+    @curiosity = Curiosity.find params[:id]
   end
 
   # GET /curiosities/new

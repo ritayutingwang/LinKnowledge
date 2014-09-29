@@ -1330,7 +1330,7 @@
 		border: 0;
 		background-color: #fff;
 		padding: 15px;
-		height:250px;
+		height:auto;
 		border-bottom:1px dashed #dddddd;
 		-webkit-border-radius: 0;
 		-moz-border-radius: 0;
