@@ -1,0 +1,56 @@
+<section class="section2">
+  <div class="container">
+    <div class="message text-center">
+      <h2 class="big-title">Last mile to bring your <span>curiosity</span> to life.</h2>
+      <p class="small-title">Share via Facebook or Twitter to finish sharing and join the campaign.</p>
+
+
+    </div><!-- end message -->
+  </div><!-- end container -->
+</section><!-- end section2 -->
+
+<section class="section1">
+  <div class="container clearfix">
+  <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
+    <!--
+    <h4 class="title">
+      <span>What you are curious about</span>
+    </h4>
+  -->
+    <div class="testimonial">
+      <h3><%= @curiosity.title %></h6>
+      <p><%= @curiosity.description %></p>
+      <div class="testimonial-meta">
+        <a class=" button large" onclick="ShareViaFacebook()">COMPLETE WITH FACEBOOK SHARING</a>
+      </div>
+    </div>
+   </div><!-- end content -->
+  </div><!-- end container -->
+</section><!-- end section -->
+
+<script>
+function ShareViaFacebook() {
+  FB.ui(
+  {
+    method: 'share',
+    href: 'http://www.linknowledge.com/curiosities/<%= @curiosity.id %>',
+  },
+  function(response)
+    {
+      alert(response);
+      alert(response.error_code);
+      if (response && !response.error_code) {
+        alert('Posting completed.');
+        //change @curiosity.shared to true
+        <% @curiosity.save %>
+        window.location.href = "/curiosities/<%= @curiosity.id %>/result";
+      } else {
+        alert('Error while posting.');
+        //change @curiosity.shared to false
+        <% @curiosity.save %>
+        //stay at the same page
+      }
+    }
+);
+}
+</script>

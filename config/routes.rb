@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root to: 'curiosities#index'
 
-  resources :curiosities
+  resources :curiosities do
+    get 'share'
+  end
   resources :curiosities do
     get 'result'
   end

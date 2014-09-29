@@ -19,6 +19,10 @@ class CuriositiesController < ApplicationController
     @curiosities = Curiosity.last 1
   end
 
+  def share
+    @curiosity = Curiosity.find params[:curiosity_id]
+  end
+
   def result
   end
 
