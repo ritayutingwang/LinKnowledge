@@ -39,7 +39,7 @@ class CuriositiesController < ApplicationController
 
     respond_to do |format|
       if @curiosity.save
-        format.html { redirect_to @curiosity, notice: 'Curiosity was successfully created.' }
+        format.html { redirect_to curiosity_share_path(@curiosity), notice: 'Curiosity was successfully created.' }
         format.json { render :show, status: :created, location: @curiosity }
       else
         format.html { render :new }
