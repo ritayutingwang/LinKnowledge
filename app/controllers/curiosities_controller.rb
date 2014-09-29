@@ -19,6 +19,9 @@ class CuriositiesController < ApplicationController
     @curiosities = Curiosity.last 1
   end
 
+  def result
+  end
+
   # GET /curiosities/1/edit
   def edit
   end
