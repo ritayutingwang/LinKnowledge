@@ -20,6 +20,15 @@
         <div class="testimonial-meta">
           <h4><%= @curiosity.user.full_name %> </h4>
         </div>
+        <div class="fbButtons">
+          <div class="fb-like"
+               data-href="http://www.linknowledge.com/curiosities/<%= @curiosity.id %>"
+               data-layout="standard"
+               data-action="like"
+               data-show-faces="false"
+               data-share="true">
+          </div>
+        </div>
       </div>
 
    </div><!-- end content -->
