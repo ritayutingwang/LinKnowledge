@@ -5,7 +5,7 @@ class CuriositiesController < ApplicationController
   # GET /curiosities
   # GET /curiosities.json
   def index
-    @curiosities = Curiosity.last 2
+    @curiosities = Curiosity.all
   end
 
   # GET /curiosities/1
