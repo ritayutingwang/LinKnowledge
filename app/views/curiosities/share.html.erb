@@ -21,7 +21,10 @@
       <h3><%= @curiosity.title %></h6>
       <p><%= @curiosity.description %></p>
       <div class="testimonial-meta">
-        <a class=" button large" onclick="ShareViaFacebook()">COMPLETE WITH FACEBOOK SHARING</a>
+        <div class="message text-center">
+        <a class=" button large" onclick="ShareViaFacebook()">SPREAD VIA FACEBOOK</a>
+        <%= link_to 'BACK TO HOME', root_path, class: "button large" %>
+        </div>
       </div>
     </div>
    </div><!-- end content -->
@@ -37,18 +40,13 @@ function ShareViaFacebook() {
   },
   function(response)
     {
-      alert(response);
-      alert(response.error_code);
       if (response && !response.error_code) {
-        alert('Posting completed.');
+        alert('Sharing completed.');
         //change @curiosity.shared to true
         <% @curiosity.save %>
-        window.location.href = "/curiosities/<%= @curiosity.id %>/result";
-      } else {
-        alert('Error while posting.');
-        //change @curiosity.shared to false
-        <% @curiosity.save %>
         //stay at the same page
+          //direct to curiosity show page
+          //window.location.href = "/curiosities/<%= @curiosity.id %>";
       }
     }
 );

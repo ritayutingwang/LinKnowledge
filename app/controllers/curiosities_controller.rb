@@ -24,9 +24,6 @@ class CuriositiesController < ApplicationController
     @curiosity = Curiosity.find params[:curiosity_id]
   end
 
-  def result
-  end
-
   # GET /curiosities/1/edit
   def edit
   end

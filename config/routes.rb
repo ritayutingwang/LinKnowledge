@@ -4,9 +4,6 @@ Rails.application.routes.draw do
   resources :curiosities do
     get 'share'
   end
-  resources :curiosities do
-    get 'result'
-  end
   resources :projects, :except => [:detroy] do
     resources :backings do
       get 'confirmation', on: :collection
