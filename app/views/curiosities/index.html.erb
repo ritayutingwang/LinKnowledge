@@ -1,7 +1,7 @@
 <div class="jumbotron">
   <div class="container">
       <h1>Link people with Knowledge</h1>
-      <h2>Because you want to learn, the knowledge should be there. </h2>
+      <h2>You want to learn, and the knowledge should be there. </h2>
   </div>
 </div>
 
@@ -9,13 +9,59 @@
 <section class="section2">
   <div class="container">
     <div class="message text-center">
-      <h2 class="big-title">Your <span>curiosity</span> is empowered!</h2>
-      <p class="small-title">Give us a good reason and we will bring it to life. For Free! Until Oct 14!</p>
+      <h2 class="big-title"><span>Empower</span> your curiosity!</h2> <!--Ryan: Connect with people who share your curiosity/questions -->
+      <p class="small-title">Connect with people who share your curiosity and learn together.<!--Give us a good reason and we will bring your curiosity to life. -->
+        <br>Until Oct 14!
+      </p>
       <%= link_to 'SHARE YOUR CURIOSITY', new_curiosity_path, class: "button large" %>
-      <a class=" dmbutton large" href="#">CONTACT US TODAY</a>
     </div><!-- end message -->
   </div><!-- end container -->
 </section><!-- end section2 -->
+
+<section class="section1">
+  <div class="container clearfix">
+    <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="dmbox">
+          <div class="service-icon">
+             <div class="dm-icon-effect-1" data-effect="slide-bottom">
+              <a class="" href="#"><i class="dm-icon fa fa-flag-checkered fa-3x"></i></a>
+            </div>
+          </div>
+          <h4>1. Wave Your Flag</h4>
+          <p>Share what you want to learn. Get started to interact with peers who share your curiosity.</p>
+          <br>
+       </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="dmbox">
+              <div class="service-icon">
+                   <div class="dm-icon-effect-1" data-effect="slide-bottom">
+                  <a class="" href="#"><i class="dm-icon fa fa-users fa-3x"></i></a>
+                  </div>
+              </div>
+              <h4>2. Group Up</h4>
+              <p>Your peers support your curiosity via Facebook like. <br> <!-- Get together and turn your curiosity in to knowledge. How do we do it? -->
+                <br></p>
+
+       </div>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-12">
+        <div class="dmbox">
+          <div class="service-icon">
+               <div class="dm-icon-effect-1" data-effect="slide-bottom">
+              <a class="" href="#"><i class="dm-icon fa fa-rocket fa-3x"></i></a>
+              </div>
+          </div>
+          <h4>3. Learn Together</h4>
+          <p>LinKnowledge sponsors an expert to turn the curiosity with most Facebook likes in to knowledge in SF.
+            <!-- We will have an expert to turn your curiosity in to knowledge in SF. If you have the most likes on facebook, your idea will ... in San Fran -->
+            </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <section class="section1">
   <div class="container clearfix">
@@ -26,8 +72,14 @@
       </div>
       <div class="curiosities">
         <div class="curiosities-search">
-          <input type="text" id="searchKeyword" class="form-control" placeholder="Try a keyword!" onkeydown="if (event.keyCode == 13) document.getElementById('searchButton').click()">
-          <a class="button" onclick="searchCuriosities();" id="searchButton">Search</a>
+          <div class="text-center">
+            <form id="bbsearch" class="form-inline">
+              <input type="text" class="form-control" id="searchKeyword"
+                     placeholder="What are you curious about?"
+                     onkeydown="if (event.keyCode == 13) document.getElementById('searchButton').click()">
+              <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
+            </form>
+          </div>
         </div>
         <div class="curiosities-result">
           <!-- If searchKeyword is provided, this @curiosities are search results.
@@ -61,20 +113,23 @@
       </div>
     </div><!-- end content -->
     <div class="general-title text-center">
-      <a class=" button large" href="#">SEE WHAT AND WHY OTHERS ARE CURIOUS ABOUT</a>
+      <a class=" button large" href="http://eepurl.com/3Q0Cf">SUBSCRIBE TO OUR LATEST NEWS</a>
     </div>
+
   </div><!-- end container -->
 </section><!-- end section -->
 
+<!-- Wait until next round
 <section class="section2">
   <div class="container">
     <div class="message text-center">
       <h2 class="big-title">Join our class in <span>San Francisco</span> for free!</h2>
       <p class="small-title">Audition starts on October 17</p><br>
       <a class=" dmbutton large" href="#">SUBSCRIBE OUR SF EVENT</a>
-    </div><!-- end message -->
-  </div><!-- end container -->
-</section><!-- end section2 -->
+    </div>
+  </div>
+</section>
+-->
 
 <script>
 function searchCuriosities() {
