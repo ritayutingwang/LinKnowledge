@@ -11,4 +11,10 @@
 // about supported directives.
 //
 //= require turbolinks
+//= require jquery
+//= require jquery_ujs
 //= require_tree .
+
+$( document ).ready(function() {
+  $('#flash-container').delay(3900).hide('slow');
+});
