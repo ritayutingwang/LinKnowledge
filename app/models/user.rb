@@ -19,7 +19,9 @@
 #  uid                    :string(255)
 #  first_name             :string(255)
 #  last_name              :string(255)
-#  image                  :string(255)
+#  nickname               :string(255)
+#  facebook_profile       :string(255)
+#  usingFbProfile         :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base
@@ -36,7 +38,8 @@ class User < ActiveRecord::Base
       user.password = Devise.friendly_token[0,20]
       user.first_name = auth.info.first_name
       user.last_name = auth.info.last_name
-      user.image = auth.info.image
+      user.facebook_profile = auth.info.image
+      user.nickname = user.full_name if user.nickname.nil?
     end
   end
 
@@ -49,6 +52,13 @@ class User < ActiveRecord::Base
 
   end
 
+  def image
+    if usingFbProfile
+      facebook_profile
+    else
+      Identicon.data_url_for email
+    end
+  end
   private
 
   def contains_cjk? string

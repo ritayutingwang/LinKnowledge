@@ -19,7 +19,9 @@
 #  uid                    :string(255)
 #  first_name             :string(255)
 #  last_name              :string(255)
-#  image                  :string(255)
+#  nickname               :string(255)
+#  facebook_profile       :string(255)
+#  usingFbProfile         :boolean          default(FALSE)
 #
 
 require 'test_helper'

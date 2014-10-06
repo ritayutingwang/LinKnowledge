@@ -31,6 +31,11 @@
       </ul>
     </div>
   </div>
+  <div id = "flash-container">
+    <% flash.each do |key, value| %>
+    <%= content_tag :div, value, class: "flash #{key}" %>
+    <% end %>
+  </div>
   <%= yield %>
   <div class="learn-more">
 	   <div class="container">

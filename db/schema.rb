@@ -46,12 +46,12 @@ ActiveRecord::Schema.define(version: 20140719081432) do
   add_index "projects", ["user_id"], name: "index_projects_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
+    t.string   "email",                  default: "",   null: false
+    t.string   "encrypted_password",     default: "",   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0,  null: false
+    t.integer  "sign_in_count",          default: 0,    null: false
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
     t.string   "current_sign_in_ip"
@@ -62,7 +62,9 @@ ActiveRecord::Schema.define(version: 20140719081432) do
     t.string   "uid"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "image"
+    t.string   "nickname"
+    t.string   "facebook_profile"
+    t.boolean  "usingFbProfile",         default: true
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

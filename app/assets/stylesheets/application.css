@@ -37,6 +37,22 @@
     width:150px;
 }
 
+
+#flash-container div{
+	padding: 3px;
+	z-index: 999;
+	text-align: center;
+}
+
+#flash-container .notice{
+	background-color: lightgreen;
+}
+
+#flash-container .error{
+	background-color: #FF3232;
+	color: white;
+}
+
 .learn-more {
   border-top: 1px solid #dbdbdb;
   border-bottom: 1px solid #dbdbdb;
