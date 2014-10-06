@@ -1,11 +1,38 @@
-<%= form_for @user do |f| %>
-  <div>
-    <%= f.label :nickname %>
-    <%= f.text_field :nickname %>
-  </div>
-  <div>
-    <%= f.label :'Use Facebook Profile' %>
-    <%= f.check_box :usingFbProfile %>
-  </div>
-  <%= f.submit %>
-<% end %>
+<section class="section1">
+  <%= form_for @user do |f| %>
+    <div class="container clearfix">
+		    <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
+		      <div class="col-lg-6 col-md-6 col-sm-12">
+          	<h4 class="title">
+            	<span>My LinKnowledge Nickname</span>
+            </h4>
+            <div class="form-group">
+              <div class="input-group">
+                 <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                 <%= f.text_field :nickname, value: @user.nickname, class: "form-control" %>
+              </div>
+            </div>
+          </div>
+  				<div class="col-lg-6 col-md-6 col-sm-12">
+          	<h4 class="title">
+            	<span>My LinKnowledge Picture</span>
+            </h4>
+            <div class="content col-lg-12 col-md-12 col-sm-12">
+              <%= f.radio_button :usingFbProfile, true, checked: @user.usingFbProfile %>
+              <%= image_tag @user.facebook_profile, height: 50, width: 50 %>
+            </div>
+            <div class="content col-lg-12 col-md-12 col-sm-12">
+              <%= f.radio_button :usingFbProfile, false, checked: !@user.usingFbProfile %> 
+              <%= image_tag @user.identicon, height: 50, width: 50 %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="message text-center">
+        <div class="form-group">
+           <button type="submit" class="button large">UPDATE SETTINGS</button>
+           <%= link_to 'BACK TO HOME', root_path, class: "button large" %>
+        </div>
+      </div>
+    <% end %>
+</section>
