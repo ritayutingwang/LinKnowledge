@@ -1,19 +1,20 @@
 <div class="jumbotron">
   <div class="container">
       <h1>Link people with Knowledge</h1>
-      <h2>You want to learn, and the knowledge should be there. </h2>
+      <h2>You want to learn, and the knowledge is there. </h2>
   </div>
 </div>
-
 
 <section class="section2">
   <div class="container">
     <div class="message text-center">
       <h2 class="big-title"><span>Empower</span> your curiosity!</h2> <!--Ryan: Connect with people who share your curiosity/questions -->
-      <p class="small-title">Connect with people who share your curiosity and learn together.<!--Give us a good reason and we will bring your curiosity to life. -->
-        <br>Until Oct 14!
+      <p class="small-title">This is the chance to have your curiosity be the topic of our opening event in SF.
+        <br>Connect with people who share your curiosity and learn together.
+        <br>OCTOBER 6-24
       </p>
-      <%= link_to 'SHARE YOUR CURIOSITY', new_curiosity_path, class: "button large" %>
+      <a href="#sharing" class="button large">SHARE YOUR CURIOSITY</a>
+      <a href="#others" class="dmbutton">SEE CURIOSITY</a>
     </div><!-- end message -->
   </div><!-- end container -->
 </section><!-- end section2 -->
@@ -54,9 +55,64 @@
               </div>
           </div>
           <h4>3. Learn Together</h4>
-          <p>LinKnowledge sponsors an expert to turn the curiosity with most Facebook likes in to knowledge in SF.
+          <p>LinKnowledge will personally invite experts to turn the curiosity with most Facebook likes into knowledge.
             <!-- We will have an expert to turn your curiosity in to knowledge in SF. If you have the most likes on facebook, your idea will ... in San Fran -->
             </p>
+        </div>
+      </div>
+    </div>
+    <div class="general-title text-center">
+      <a class=" button large" href="http://eepurl.com/3Q0Cf">SUBSCRIBE TO OUR LATEST NEWS</a>
+    </div>
+  </div>
+</section>
+
+
+<section class="section2" id="sharing">
+  <div class="container">
+    <div class="message text-center">
+      <h2 class="big-title">What are you <span>passionate</span> to learn?</h2>
+      <p class="small-title">Share why you want to learn the thing. <br>
+        We will find you who have the same passion for it!
+        The chance to be the topic of our SF opening event.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<section class="section1">
+  <div class="container clearfix">
+    <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
+      <div class="col-lg-2 col-md-2 col-sm-12">
+      </div>
+      <div class="col-lg-8 col-md-8 col-sm-12">
+        <%= form_for @curiosity do |f| %>
+          <h4 class="title">
+            <span>Share you curiosity</span>
+          </h4>
+          <%= render 'form' %>
+        <% end %>
+      </div>
+      <div class="col-lg-2 col-md-2 col-sm-12">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section2" id="others">
+  <div class="container">
+    <div class="message text-center">
+      <h2 class="big-title">What people are <span>curious</span> about?</h2>
+      <p class="small-title">That makes our world.</p>
+      <div class="curiosities-search">
+        <div class="text-center">
+          <form id="bbsearch" class="form-inline">
+            <input type="text" class="form-control" id="searchKeyword"
+                   placeholder=""
+                   onkeydown="if (event.keyCode == 13) document.getElementById('searchButton').click()">
+            <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
+          </form>
         </div>
       </div>
     </div>
@@ -66,21 +122,7 @@
 <section class="section1">
   <div class="container clearfix">
     <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
-      <div class="general-title text-center">
-        <h3>What people are curious about</h3>
-        <hr>
-      </div>
       <div class="curiosities">
-        <div class="curiosities-search">
-          <div class="text-center">
-            <form id="bbsearch" class="form-inline">
-              <input type="text" class="form-control" id="searchKeyword"
-                     placeholder="What are you curious about?"
-                     onkeydown="if (event.keyCode == 13) document.getElementById('searchButton').click()">
-              <button type="submit" class="btn btn-primary" id="searchButton">Search</button>
-            </form>
-          </div>
-        </div>
         <div class="curiosities-result">
           <!-- If searchKeyword is provided, this @curiosities are search results.
           Otherwise, this @curiosities are all Curiosities shared to facebook-->
@@ -112,24 +154,8 @@
         </div>
       </div>
     </div><!-- end content -->
-    <div class="general-title text-center">
-      <a class=" button large" href="http://eepurl.com/3Q0Cf">SUBSCRIBE TO OUR LATEST NEWS</a>
-    </div>
-
   </div><!-- end container -->
 </section><!-- end section -->
-
-<!-- Wait until next round
-<section class="section2">
-  <div class="container">
-    <div class="message text-center">
-      <h2 class="big-title">Join our class in <span>San Francisco</span> for free!</h2>
-      <p class="small-title">Audition starts on October 17</p><br>
-      <a class=" dmbutton large" href="#">SUBSCRIBE OUR SF EVENT</a>
-    </div>
-  </div>
-</section>
--->
 
 <script>
 function searchCuriosities() {

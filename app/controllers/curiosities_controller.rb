@@ -5,6 +5,7 @@ class CuriositiesController < ApplicationController
   # GET /curiosities
   # GET /curiosities.json
   def index
+    @curiosity = Curiosity.new
     @curiosities = Curiosity.all
   end
 
@@ -12,12 +13,6 @@ class CuriositiesController < ApplicationController
   # GET /curiosities/1.json
   def show
     @curiosity = Curiosity.find params[:id]
-  end
-
-  # GET /curiosities/new
-  def new
-    @curiosity = Curiosity.new
-    @curiosities = Curiosity.last 1
   end
 
   def share
