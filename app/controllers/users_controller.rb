@@ -6,7 +6,7 @@ class UsersController < ApplicationController
 
   def update
     if @user.update_attributes(user_params)
-      redirect_to root_path, notice:'Your settings are updated'
+      redirect_to session.delete(:previous_url) || root_path, notice:'Your settings are updated'
     else
       redirect_to edit_user_path(@user), flash: { error: 'Some errors occured while updating your settings, please try again' }
     end

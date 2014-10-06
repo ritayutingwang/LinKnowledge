@@ -15,6 +15,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    session.delete(:previous_url) || root_path
+    if resource.sign_in_count == 1
+      edit_user_path(resource)
+    else
+      session.delete(:previous_url) || root_path
+    end
   end
 end
