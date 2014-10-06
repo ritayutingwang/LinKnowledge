@@ -52,6 +52,13 @@ class User < ActiveRecord::Base
 
   end
 
+  def image
+    if usingFbProfile
+      facebook_profile
+    else
+      Identicon.data_url_for email
+    end
+  end
   private
 
   def contains_cjk? string
