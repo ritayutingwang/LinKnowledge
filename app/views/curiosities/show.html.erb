@@ -1,36 +1,30 @@
 <section class="section2">
   <div class="container">
     <div class="message text-center">
-      <h2 class="big-title">Last mile to bring your <span>curiosity</span> to life.</h2>
-      <p class="small-title">Share via Facebook or Twitter to finish sharing and join the campaign.</p>
+      <h2 class="big-title"><span>Like it</span> if you are also curious</h2>
+      <p class="small-title">The curiosity with most Facebook likes will be the topic of our opening event in SF.</p>
 </section>
 
 <section class="section1">
   <div class="container clearfix">
   <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
-    <!--
-    <h4 class="title">
-      <span>Most recent story</span>
-    </h4>
-  -->
-      <div class="testimonial">
-        <img data-effect="slide-bottom" class="alignleft img-circle" src="<%= @curiosity.user.image %>" alt="">
-        <h3><%= @curiosity.title %></h6>
-        <p><%= @curiosity.description %></p>
-        <div class="testimonial-meta">
-          <h4><%= @curiosity.user.full_name %> </h4>
-        </div>
-        <div class="fbButtons">
-          <div class="fb-like"
-               data-href="http://www.linknowledge.com/curiosities/<%= @curiosity.id %>"
-               data-layout="standard"
-               data-action="like"
-               data-show-faces="false"
-               data-share="true">
-          </div>
+    <div class="testimonial">
+      <img data-effect="slide-bottom" class="alignleft img-circle" src="<%= @curiosity.user.image %>" alt="">
+      <h3><%= @curiosity.title %></h6>
+      <p><%= @curiosity.description %></p>
+      <div class="testimonial-meta">
+        <h4><%= @curiosity.user.full_name %> </h4>
+      </div>
+      <div class="fbButtons">
+        <div class="fb-like"
+             data-href="http://www.linknowledge.com/curiosities/<%= @curiosity.id %>"
+             data-layout="standard"
+             data-action="like"
+             data-show-faces="false"
+             data-share="true">
         </div>
       </div>
-
+    </div>
    </div><!-- end content -->
   </div><!-- end container -->
 </section><!-- end section -->
