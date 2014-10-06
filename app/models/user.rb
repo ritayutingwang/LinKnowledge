@@ -56,9 +56,14 @@ class User < ActiveRecord::Base
     if usingFbProfile
       facebook_profile
     else
-      Identicon.data_url_for email
+      self.identicon
     end
   end
+
+  def identicon
+    Identicon.data_url_for email
+  end
+
   private
 
   def contains_cjk? string

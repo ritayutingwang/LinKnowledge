@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  root to: 'projects#index'
+  root to: 'curiosities#index'
 
+  resources :curiosities do
+    get 'share'
+  end
   resources :projects, :except => [:detroy] do
     resources :backings do
       get 'confirmation', on: :collection

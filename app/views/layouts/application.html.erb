@@ -2,14 +2,50 @@
 <html>
 <head>
   <title>LinKnowledge</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+  <!-- Google Fonts -->
+	<!--<link href='http://fonts.googleapis.com/css?family=Ruda:400,900,700' rel='stylesheet' type='text/css'>
+-->
   <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css" rel="stylesheet">
   <link rel="stylesheet" href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css">
+  <link rel="shortcut icon" href="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/LinKnowledge_icon.png">
+
+  <link rel="stylesheet" href="/assets/font-awesome.css">
+  <link rel="stylesheet" href="/assets/style.css">
+  <link rel="stylesheet" href="/assets/colors/blue.css">
+
+  <!--
+
+  <link rel="stylesheet" href="/assets/backing.css">
+  -->
+
+  <link rel="stylesheet" href="/assets/application.css">
+  <link rel="stylesheet" href="/assets/projects.css">
+
+  <!--
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  -->
+  <!-- Support for HTML5 -->
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <!-- Enable media queries on older browsers -->
+  <!--[if lt IE 9]>
+    <script src="assets/js/respond.min.js"></script>
+  <![endif]-->
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+
+  <meta property="og:title" content="Title Here" />
+  <meta property="og:image" content="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Screen%20Shot%202014-10-02%20at%205.39.46%20PM.png"/>
+  <%= csrf_meta_tags %>
+
+
+
+
+
 </head>
 <body>
-
+  <div id="fb-root"></div>
   <div class="nav">
     <div class="container">
       <ul class="pull-left">
@@ -18,7 +54,10 @@
       <ul class="pull-right">
         <% if user_signed_in? %>
         <li>
-          <a href="#"><%= current_user.full_name %></a> knows.
+          <span>
+            <i class="fa fa-user"></i>
+            <%= link_to current_user.full_name, edit_user_path(current_user) %>
+          </span>
         </li>
         <li>
           <%= link_to "Sign out", destroy_user_session_path %>
@@ -31,12 +70,49 @@
       </ul>
     </div>
   </div>
-  <div id = "flash-container">
-    <% flash.each do |key, value| %>
-    <%= content_tag :div, value, class: "flash #{key}" %>
-    <% end %>
-  </div>
   <%= yield %>
+  <section class="section1">
+  	<div class="container clearfix">
+      <h4 class="title">LinKnowledge</h4>
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="servicebox text-center">
+                <div class="service-icon">
+                    <div class="dm-icon-effect-1" data-effect="slide-bottom">
+                        <a href="https://www.facebook.com/linknowledge" target="_blank" class=""> <i class="dm-icon fa fa-facebook fa-3x"></i> </a>
+                    </div>
+                    <div class="servicetitle">
+                    <h4>Facebook</h4>
+                    </div>
+                </div><!-- service-icon -->
+            </div><!-- servicebox -->
+        </div><!-- large-3 -->
+
+        <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="servicebox text-center">
+                <div class="service-icon">
+                    <div class="dm-icon-effect-1" data-effect="slide-bottom">
+                        <a href="https://twitter.com/linknowledgecom" target="_blank" class=""> <i class="dm-icon fa fa-twitter fa-3x"></i> </a>
+                    </div>
+                    <div class="servicetitle">
+                    <h4>Twitter</h4>
+                    </div>
+                </div><!-- service-icon -->
+            </div><!-- servicebox -->
+        </div><!-- large-3 -->
+
+        <div class="col-lg-6 col-md-6 col-sm-6">
+            <h4 class="title">About Us</h4>
+                <p>LinKnowledge is dedicated to fulfilling curiosity, empowering individual experts, and most importantly, connecting people with knowledge. </p>
+                    <ul class="contact_details">
+	                	<li><i class="fa fa-envelope-o"></i> info@linknowledge.com</li>
+	                	<!--<li><i class="fa fa-phone-square"></i> +1 999 999 9999</li>-->
+	                	<!--<li><i class="fa fa-home"></i> Some Fine Address, 887, Madrid, Spain.</li>-->
+                    </ul><!-- contact_details -->
+                </div>
+        </div><!-- large-3 -->
+      </div>
+    </section>
+  <!--
   <div class="learn-more">
 	   <div class="container">
     	<div class="row">
@@ -55,6 +131,7 @@
       </div>
     </div>
   </div>
+  -->
   <div class="copyright">
     <div class="copyright-words">
       <p>copyright @ LinKnowledge 2014

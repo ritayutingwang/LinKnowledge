@@ -1,0 +1,54 @@
+<section class="section2">
+  <div class="container">
+    <div class="message text-center">
+      <h2 class="big-title">Spread your <span>Curiosity!</span></h2><!--Last mile to bring your <span>curiosity</span> to life.</h2>-->
+      <p class="small-title">The votes will start NOW!</p>
+
+
+    </div><!-- end message -->
+  </div><!-- end container -->
+</section><!-- end section2 -->
+
+<section class="section1">
+  <div class="container clearfix">
+  <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
+    <!--
+    <h4 class="title">
+      <span>What you are curious about</span>
+    </h4>
+  -->
+    <div class="testimonial">
+      <h3><%= @curiosity.title %></h6>
+      <p><%= @curiosity.description %></p>
+      <div class="testimonial-meta">
+        <div class="message text-center">
+        <a class=" button large" onclick="ShareViaFacebook()">SPREAD VIA FACEBOOK</a>
+        <%= link_to 'BACK TO HOME', root_path, class: "button large" %>
+        </div>
+      </div>
+    </div>
+   </div><!-- end content -->
+  </div><!-- end container -->
+</section><!-- end section -->
+
+<script>
+function ShareViaFacebook() {
+  FB.ui(
+  {
+    method: 'share',
+    href: 'http://www.linknowledge.com/curiosities/<%= @curiosity.id %>',
+  },
+  function(response)
+    {
+      if (response && !response.error_code) {
+        alert('Sharing completed.');
+        //change @curiosity.shared to true
+        <% @curiosity.save %>
+        //stay at the same page
+          //direct to curiosity show page
+          //window.location.href = "/curiosities/<%= @curiosity.id %>";
+      }
+    }
+);
+}
+</script>

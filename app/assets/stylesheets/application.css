@@ -21,22 +21,22 @@
   color: #5a5a5a;
   font-size: 14px;
   font-weight: bold;
-
-
 }
 
 .nav li {
   display: inline;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .nav {
   height: 50px;
+  font-family: 'Shift', sans-serif;
 }
 
 .nav img {
     width:150px;
 }
-
 
 #flash-container div{
 	padding: 3px;
@@ -52,6 +52,39 @@
 	background-color: #FF3232;
 	color: white;
 }
+
+.jumbotron {
+
+  background-image:url('https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/LinKnowledge%20jumbotron.png');
+  /*font-family: 'Shift', sans-serif;*/
+  height: 400px;
+}
+
+.jumbotron .container {
+  position: relative;
+  top:100px;
+}
+
+.jumbotron h1 {
+  color: black;
+  font-size: 48px;
+  font-weight: bold;
+  font-family: 'Shift', sans-serif;
+}
+
+.jumbotron h2 {
+  color: #544e4e;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: 'Shift', sans-serif;
+}
+/*
+.jumbotron p {
+  font-size: 20px;
+  font-color: white;
+  font-family: 'Shift', sans-serif;
+}
+*/
 
 .learn-more {
   border-top: 1px solid #dbdbdb;
@@ -76,5 +109,16 @@
 }
 .copyright .copyright-words p {
   font-family: 'Shift', sans-serif;
+  text-align: center;
+}
+
+.warning p {
+  color: red;
+}
+
+.curiosities .curiosities-search {
+  margin-top: 50px;
+  padding-left: 150px;
+  padding-right: 150px;
   text-align: center;
 }
