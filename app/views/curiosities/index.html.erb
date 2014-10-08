@@ -21,11 +21,11 @@
         <br>Connect with people who share your curiosity and learn together.
         <br>OCTOBER 8-31
       </p>
-      <a href="#sharing" class="button large">SHARE YOUR CURIOSITY</a>
-      <a href="#others" class="dmbutton">SEE CURIOSITY</a>
-    </div>
-  </div>
-</section>
+      <%= link_to 'SHARE YOUR CURIOSITY', '#sharing', class: "button large", id: 'share-CTA'  %>
+      <%= link_to 'SEE CURIOSITY', '#others', class: 'dmbutton', id: 'browse-CTA' %>
+    </div><!-- end message -->
+  </div><!-- end container -->
+</section><!-- end section2 -->
 
 <section class="section1">
   <div class="container clearfix">
@@ -70,7 +70,8 @@
       </div>
     </div>
     <div class="general-title text-center">
-      <a class=" button large" href="http://eepurl.com/3Q0Cf" target="_blank">SUBSCRIBE TO OUR LATEST NEWS</a>
+      <%= link_to 'SUBSCRIBE TO OUR LATEST NEWS', 'http://eepurl.com/3Q0Cf',
+        class:'button large', id: 'subscribe', target: '_blank' %>
     </div>
   </div>
 </section>

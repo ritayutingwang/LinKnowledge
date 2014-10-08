@@ -17,6 +17,7 @@ class CuriositiesController < ApplicationController
 
   def share
     @curiosity = Curiosity.find params[:curiosity_id]
+    gon.curiosity = @curiosity
   end
 
   # GET /curiosities/1/edit
@@ -72,6 +73,6 @@ class CuriositiesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def curiosity_params
-      params.require(:curiosity).permit(:title, :description)
+      params.require(:curiosity).permit(:title, :description, :shared)
     end
 end

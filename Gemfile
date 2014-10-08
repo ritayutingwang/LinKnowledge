@@ -7,6 +7,7 @@ gem 'rails', '4.1.4'
 gem 'pg'
 # jquery
 gem 'jquery-rails'
+gem 'gon'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.3'

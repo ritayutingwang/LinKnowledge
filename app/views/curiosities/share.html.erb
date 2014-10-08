@@ -1,8 +1,8 @@
 <%= content_for :og do %>
-  <meta property="og:url" content="http://www.linknowledge.com/curiosities/<%= curiosity.id %>" />
+  <meta property="og:url" content="http://www.linknowledge.com/curiosities/<%= @curiosity.id %>" />
   <meta property="og:type" content="curiosity" />
-  <meta property="og:title" content="<%= curiosity.title %>" />
-  <meta property="og:description" content="<%= curiosity.description %>" />
+  <meta property="og:title" content="<%= @curiosity.title %>" />
+  <meta property="og:description" content="<%= @curiosity.description %>" />
   <meta property="og:image" content="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Campaign-opengraph-image.png"/>
 <% end %>
 
@@ -30,33 +30,11 @@
       <p><%= @curiosity.description %></p>
       <div class="testimonial-meta">
         <div class="message text-center">
-        <a class=" button large" onclick="ShareViaFacebook()">SPREAD VIA FACEBOOK</a>
-        <%= link_to 'BACK TO HOME', root_path, class: "button large" %>
+        <%= button_tag 'SPREAD VIA FACEBOOK', class: 'button large', id:'spread-via-fb' %>
+        <%= link_to 'BACK TO HOME', root_path, class: "button large", id:'back-to-home' %>
         </div>
       </div>
     </div>
    </div><!-- end content -->
   </div><!-- end container -->
 </section><!-- end section -->
-
-<script>
-function ShareViaFacebook() {
-  FB.ui(
-  {
-    method: 'share',
-    href: 'http://www.linknowledge.com/curiosities/<%= @curiosity.id %>',
-  },
-  function(response)
-    {
-      if (response && !response.error_code) {
-        alert('Sharing completed.');
-        //change @curiosity.shared to true
-        <% @curiosity.save %>
-        //stay at the same page
-          //direct to curiosity show page
-          //window.location.href = "/curiosities/<%= @curiosity.id %>";
-      }
-    }
-);
-}
-</script>
