@@ -21,25 +21,7 @@
       <%= f.text_area :description, required: true, class: "form-control", rows:  "8", placeholder: "Why are you passionate about it?" %>
     </div>
     <div class="form-group">
-      <input type="submit" onclick="return jssubmit();" class="button large" value="Submit" >
+      <%= f.submit 'Submit', class: 'button large', id: 'submit-curiosity' %>
     </div>
   </div>
 <% end %>
-
-<script>
-  function jssubmit() {
-
-    if (document.getElementById("curiosity_title").value === "") {
-
-      document.getElementById('validationMessege').innerHTML = 'Please enter title!';
-      return false;
-    }
-    else if (document.getElementById('curiosity_description').value === "") {
-      document.getElementById('validationMessege').innerHTML = 'Please enter description!';
-      return false;
-    }
-    else {
-      return true;
-    }
-  }
-</script>
