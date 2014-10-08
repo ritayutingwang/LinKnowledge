@@ -34,9 +34,8 @@
     <script src="assets/js/respond.min.js"></script>
   <![endif]-->
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-
-  <meta property="og:title" content="Title Here" />
-  <meta property="og:image" content="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Screen%20Shot%202014-10-02%20at%205.39.46%20PM.png"/>
+  <!-- for Facebook OG　Website -->
+  <%= yield :og %>
   <%= csrf_meta_tags %>
 
 

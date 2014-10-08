@@ -1,3 +1,11 @@
+<%= content_for :og do %>
+  <meta property="og:url" content="http://www.linknowledge.com/curiosities/<%= curiosity.id %>" />
+  <meta property="og:type" content="curiosity" />
+  <meta property="og:title" content="<%= curiosity.title %>" />
+  <meta property="og:description" content="<%= curiosity.description %>" />
+  <meta property="og:image" content="https://dl.dropboxusercontent.com/u/32675706/LinKnowledge/Campaign-opengraph-image.png"/>
+<% end %>
+
 <section class="section2">
   <div class="container">
     <div class="message text-center">
