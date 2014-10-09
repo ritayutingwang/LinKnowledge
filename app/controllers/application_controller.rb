@@ -15,10 +15,21 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
+    handle_unsaved_curiosity
     if resource.sign_in_count == 1
-      edit_user_path(resource)
-    else
-      session.delete(:previous_url) || root_path
+      return edit_user_path(resource)
+    end
+
+    return session.delete(:previous_url) || root_path
+  end
+
+  private
+  def handle_unsaved_curiosity
+    if curiosity_params = session.delete(:unsaved_curiosity)
+      @curiosity = Curiosity.new(curiosity_params)
+      @curiosity.user = resource
+      @curiosity.save
+      return curiosity_share_path(@curiosity)
     end
   end
 end

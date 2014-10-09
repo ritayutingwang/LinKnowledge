@@ -1,6 +1,6 @@
 class CuriositiesController < ApplicationController
   before_action :set_curiosity, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, only: [:create]
+  before_action :set_unsaved_curiosity, :authenticate_user!, only: [:create]
 
   # GET /curiosities
   # GET /curiosities.json
@@ -68,6 +68,12 @@ class CuriositiesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_curiosity
       @curiosity = Curiosity.friendly.find params[:id]
+    end
+
+    def set_unsaved_curiosity
+      unless current_user
+        session[:unsaved_curiosity] = curiosity_params
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
