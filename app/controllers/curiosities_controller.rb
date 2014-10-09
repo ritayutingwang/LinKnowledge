@@ -12,11 +12,10 @@ class CuriositiesController < ApplicationController
   # GET /curiosities/1
   # GET /curiosities/1.json
   def show
-    @curiosity = Curiosity.find params[:id]
   end
 
   def share
-    @curiosity = Curiosity.find params[:curiosity_id]
+    @curiosity = Curiosity.friendly.find params[:curiosity_id]
     gon.curiosity = @curiosity
   end
 
@@ -68,7 +67,7 @@ class CuriositiesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_curiosity
-      @curiosity = Curiosity.find(params[:id])
+      @curiosity = Curiosity.friendly.find params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
