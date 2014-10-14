@@ -38,6 +38,7 @@ gem 'annotate'
 gem 'identicon'
 
 gem 'friendly_id', '~> 5.0.0'
+gem 'babosa'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
